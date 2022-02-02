@@ -55,7 +55,23 @@ const MainColumn = styled.div`
   flex-grow: 1;
 `;
 
-const Header = styled.header``;
+const Header = styled.header`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  h2 {
+    display: flex;
+    align-items: center;
+  }
+
+  label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+`;
 
 const Title = styled.h2`
   font-size: 1.5rem;
