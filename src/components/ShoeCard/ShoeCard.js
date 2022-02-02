@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components/macro";
+import styled from "styled-components";
 
 import { COLORS, WEIGHTS } from "../../constants";
 import { formatPrice, pluralize, isNewShoe } from "../../utils";
@@ -35,6 +35,9 @@ const ShoeCard = ({
     <Link href={`/shoe/${slug}`}>
       <Wrapper>
         <ImageWrapper>
+          {variant !== "default" && (
+            <Variant variant={variant}>{variant}</Variant>
+          )}
           <Image alt="" src={imageSrc} />
         </ImageWrapper>
         <Spacer size={12} />
@@ -56,12 +59,20 @@ const Link = styled.a`
   width: 300px;
 `;
 
-const Wrapper = styled.article`
-  overflow: hidden;
-`;
+const Wrapper = styled.article``;
 
 const ImageWrapper = styled.div`
   position: relative;
+`;
+
+const Variant = styled.div`
+  position: absolute;
+  right: -8px;
+  top: 8px;
+  color: white;
+  padding: 8px;
+
+  background-color: ${(p) => (p.variant === "on-sale" ? `red ` : `blue`)};
 `;
 
 const Image = styled.img`

@@ -51,7 +51,6 @@ const LeftColumn = styled.div`
 
 const MainColumn = styled.div`
   order: 1;
-  overflow: hidden;
   flex-grow: 1;
 `;
 
